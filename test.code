@@ -1,0 +1,9 @@
+
+
+ola = 10
+ola + 50
+
+
+ola = ola + ola
+
+ola
