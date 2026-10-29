@@ -63,9 +63,9 @@ int I;
 char S[100];
 }
 
-%token INT EQ SUM EOL VAR
-%left SUM
-
+%token INT EQ SUM EOL VAR MIN MUL DIV
+%left SUM MIN
+%left DIV MUL
 %%
 
 S:
@@ -92,6 +92,9 @@ E:
 	$<I>$ = table[r].value;
 	}
   | INT { $<I>$=$<I>1; }
+  | E DIV E { $<I>$=$<I>1/$<I>3; }
+  | E MUL E { $<I>$=$<I>1*$<I>3; }
+  | E MIN E { $<I>$=$<I>1-$<I>3; }
   | E SUM E { $<I>$=$<I>1+$<I>3; }
   ;
 

@@ -21,6 +21,12 @@ return VAR; }
 
 [+] { return SUM; }
 
+[-] { return MIN; }
+
+[*] { return MUL; }
+
+[/] { return DIV; }
+
 \n+ { return EOL; }
 
 [[:space:]]+ ;
